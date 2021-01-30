@@ -5,7 +5,11 @@ package ru.netology.lesson6
  * согласно описанию https://vk.com/dev.php?method=post&prefix=objects
  */
 
+import kotlinx.serialization.Serializable
+import kotlinx.serialization.json.Json
+
 //Игнорируйте поля post_source, attachments, geo, copy_history
+@Serializable
 data class Post(
     val id             : Int = 0,          //идентификатор записи.
     val ownerId        : Int = 0,          //идентификатор владельца стены, на которой размещена запись. В версиях API ниже 5.7 это поле называется to_id.
@@ -37,6 +41,7 @@ data class Post(
  * Description SourceType
  * тип источника
  */
+@Serializable
 enum class SourceType(value : String){
     vk    ("vk"    ),// запись создана через основной интерфейс сайта (http://vk.com/);
     widget("widget"),//— запись создана через виджет на стороннем сайте;
@@ -50,6 +55,7 @@ enum class SourceType(value : String){
  * вспомогательный класс, который используется только вместе с Post
  * информация о записи VK Donut
  */
+@Serializable
 data class VkDonut(
     val isDonut            : Boolean = false, // — запись доступна только платным подписчикам VK Donut;
     val paidDuration       : Int = 0,         // — время, в течение которого запись будет доступна только платным подписчикам VK Donut;
@@ -65,6 +71,7 @@ data class VkDonut(
  * вспомогательный класс, который используется только вместе с Post
  * информация о репостах записи («Рассказать друзьям»)
  */
+@Serializable
 data class Reposts(
     val count        : Int = 0,
     val userReposted : Boolean = false
@@ -77,6 +84,7 @@ data class Reposts(
  * вспомогательный класс, который используется только вместе с Post
  * информация о лайках к записи
  */
+@Serializable
 data class Likes(
     val count      : Int = 0,
     val userLikes  : Boolean = false,
@@ -92,7 +100,7 @@ data class Likes(
  * вспомогательный класс, который используется только вместе с Post
  * информация о комментариях к записи
  */
-
+@Serializable
 data class CommentsDesc(
     val count         : Int = 0,
     val canPost       : Boolean = false,
@@ -108,6 +116,7 @@ data class CommentsDesc(
  * вспомогательный класс, который используется только вместе с Post
  * источник материала
  */
+@Serializable
 data class Copyright(
     val id   : Int = 0,
     val link : String = "",
