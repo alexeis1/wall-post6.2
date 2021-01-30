@@ -5,5 +5,6 @@ package ru.netology.lesson6
 
 fun main()
 {
-
+    val post = Post( text = "пост № 1" )
+    println(post.toString())
 }
