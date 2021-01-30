@@ -15,7 +15,7 @@ val format = Json {
 
 fun main()
 {
-    val post = Post( text = "пост № 1", createdBy = 1 )
+    val post = Post( text = "пост № 1", createdBy = 1, postSource = PostSource() )
     println(format.encodeToString(post))
 
     //println(post.toString())
