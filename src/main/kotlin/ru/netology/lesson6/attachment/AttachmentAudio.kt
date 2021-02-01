@@ -4,7 +4,8 @@ package ru.netology.lesson6.attachment
  * Аудиозапись в прикрепленная к посту
  */
 data class AttachmentAudio(
-    val audio : AttachmentAudioContent = AttachmentAudioContent()
+    override val type  : String = "audio",
+             val audio : AttachmentAudioContent = AttachmentAudioContent()
 ) : Attachment()
 
 /**

@@ -4,8 +4,9 @@ package ru.netology.lesson6.attachment
  * Заметка прикрепленная к посту
  */
 data class AttachmentNote(
-    val note : AttachmentNoteContent = AttachmentNoteContent()
-)
+    override val type : String = "note",
+             val note : AttachmentNoteContent = AttachmentNoteContent()
+) : Attachment()
 
 /**
  * Содержимое заметки прикрепленная к посту
@@ -20,4 +21,4 @@ data class AttachmentNoteContent (
     val readComments : Int = 0 	  , // количество прочитанных комментариев (только при запросе информации
                                     // о заметке текущего пользователя).
     val viewUrl      : String = "" //	URL страницы для отображения заметки.
-) : Attachment()
+)

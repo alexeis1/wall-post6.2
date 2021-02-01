@@ -6,8 +6,9 @@ package ru.netology.lesson6.attachment
  */
 
 data class AttachmentGraffiti (
-    val graffiti : AttachmentGraffitiContent = AttachmentGraffitiContent(),     //	идентификатор граффити.
-)
+    override val type     : String = "graffiti",
+             val graffiti : AttachmentGraffitiContent = AttachmentGraffitiContent(),     //	идентификатор граффити.
+) : Attachment()
 
 /**
  * Содержимое вложения graffiti

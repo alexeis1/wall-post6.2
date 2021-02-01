@@ -2,7 +2,8 @@ package ru.netology.lesson6.attachment
 
 
 data class AttachmentPhoto(
-    val photo : AttachmentPhotoContent = AttachmentPhotoContent()
+    override val type  : String = "photo",
+             val photo : AttachmentPhotoContent = AttachmentPhotoContent()
 ) : Attachment()
 
 /**

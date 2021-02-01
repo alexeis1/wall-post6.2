@@ -5,7 +5,8 @@ package ru.netology.lesson6.attachment
  */
 
 data class AttachmentDocument(
-    val doc : AttachmentDocumentContent = AttachmentDocumentContent()
+    override val type : String = "doc",
+             val doc  : AttachmentDocumentContent = AttachmentDocumentContent()
 ) : Attachment()
 
 /**

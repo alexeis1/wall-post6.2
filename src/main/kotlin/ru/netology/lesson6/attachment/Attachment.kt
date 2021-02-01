@@ -6,13 +6,9 @@ package ru.netology.lesson6.attachment
  * в классе есть только тип, содержимое зависит от
  * этого типа
  */
-
-import kotlinx.serialization.Serializable
-
-@Serializable
-abstract class Attachment(
-    val type    : String = ""
-)
+abstract class Attachment{
+    abstract val type : String
+}
 
 
 
